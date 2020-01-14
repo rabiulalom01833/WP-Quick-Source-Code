@@ -1,1 +1,23 @@
 
+
+<?php 
+
+define('PREFAB_THEME_DIR', get_template_directory());
+define('PREFAB_THEME_URI', get_template_directory_uri());
+define('PREFAB_THEME_CSS_DIR', PREFAB_THEME_URI . '/css/');
+define('PREFAB_THEME_JS_DIR', PREFAB_THEME_URI . '/js/');
+define('PREFAB_THEME_INC', PREFAB_THEME_DIR . '/inc/');
+
+function prefab_add_script(){
+    //add style
+    wp_enqueue_style('prefab', get_stylesheet_uri());
+    wp_enqueue_style('bootstrap', PREFAB_THEME_CSS_DIR . 'bootstrap.min.css', array() );
+ 
+ 
+
+}
+add_action('wp_enqueue_scripts','prefab_add_script');
+
+
+
+?>
