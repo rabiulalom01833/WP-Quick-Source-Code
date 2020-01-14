@@ -1,1 +1,56 @@
+/**
+ * Include prefab function files
+ * 
+ */
+
+ require_once PREFAB_THEME_INC . 'prefab_navwalker.php';
+ 
+ register_nav_menus( array(
+    'primary'=> esc_html__('Primary Menu', 'prefab')
+));
+
+
+function prefab_main_menu(){ ?>
+
+    <div class="header-bottom-area pl-60 pr-60">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-xl-3 col-lg-3">
+                <div class="logo">
+                    <a href="index.html"><img src="img/logo/logo.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-9">
+                 <div class="header-button f-right d-none d-lg-block">
+                     <a href="#">Get a quote</a>
+                 </div>
+                <div class="main-menu f-right">
+                    <nav id="mobile-menu">
+                        <?php 
+                        
+                        wp_nav_menu(array(
+                            'theme_location'=>'primary',
+                            'menu_class'=>'',
+                            'fallback_cb'     => 'Prefab_Navwalker::fallback',
+                             'walker'          => new Prefab_Navwalker(),
+                        ));
+                        
+                        ?>
+                    </nav>
+                </div>
+                <div class="mobile-menu"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php
+}
+
+
+/**
+ *  Menu 
+ */
+
+<?php prefab_main_menu(); ?>
+
 
