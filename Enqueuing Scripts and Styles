@@ -13,7 +13,8 @@ function prefab_add_script(){
     wp_enqueue_style('prefab', get_stylesheet_uri());
     wp_enqueue_style('bootstrap', PREFAB_THEME_CSS_DIR . 'bootstrap.min.css', array() );
  
- 
+    //add js script
+	wp_enqueue_script( 'modernizr', PREFAB_THEME_JS_DIR . 'vendor/modernizr-3.5.0.min.js', array('jquery'), false, true );
 
 }
 add_action('wp_enqueue_scripts','prefab_add_script');
