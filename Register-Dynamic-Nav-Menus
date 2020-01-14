@@ -48,7 +48,7 @@ function prefab_main_menu(){ ?>
 
 
 /**
- *  Menu 
+ *  function menu call in header.php file
  */
 
 <?php prefab_main_menu(); ?>
